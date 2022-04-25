@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+      @import url('https://fonts.googleapis.com/css2?family=Akshar&family=Anek+Odia:wght@300&display=swap');
+  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles.css">
+  <title>Method overriding</title>
+</head>
+<body>
+  <div style="margin-inline-start: -5px; background-color: #F0E9E9;" class="card text-center">
+    <div class="card-header">
+      <h1>Method Overriding</h1>
+      <img class="icon" src="images/icon.png" alt="">
+    </div>
+
+
+    <div class="card-body">
+      <br>
+        <p class="p1">If subclass (child class) has the same method as declared in the parent class, it is known as method overriding in Java.
+          <br>
+          In other words, If a subclass provides the specific implementation of the method that has been declared by one of its parent class, it is known as method overriding.</p>
+          <br>
+<!----------------------------------rules and usage-------------------------------------------------------------->
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <h3 class="btn1"> Rules for Java Method Overriding</h3>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+          <ul class="rules">
+              <li>The method must have the same name as in the parent class.
+              </li>
+              <li>The method must have the same parameter as in the parent class.
+              </li>
+              <li>The method must have the same parameter as in the parent class.
+              </li>
+            </ul>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <h3 class="btn1">Usage of Java Method Overriding</h3> 
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+          <ul class="rules">
+              <li>
+                  Method overriding is used to provide the specific implementation of a method which is already provided by its superclass.
+              </li>
+              <li>
+                  Method overriding is used for runtime polymorphism.
+              </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+  
+    </div>
+  </div>
+
+<!--------------------------------Examples------------------------------------------------------------------------------------------------------------>
+  <br>
+  <br>
+  <div class="card" style="width: 50rem; background-color: #FFF6EA; ">
+      <div class="card-body"  >
+          <h4 style="text-align: left; margin-left: 20px; ">EXAMPLES</h4>
+
+      </div>
+    </div>
+    <br>
+  
+  <div class="card" style="width: 50rem;">
+      <div style="margin-left:-40px;" class="card-body">
+        <h5  class="card-title">Example-1</h5>
+        <h6 class="card-subtitle mb-2 text-muted">//Java Program to illustrate the use of Java Method Overriding  </h6>
+        
+
+        <pre class ="lead"><br>
+          //Creating a parent class. 
+          class Vehicle{  
+            //defining a method  
+            void run(){System.out.println("Vehicle is running");}  
+          }  
+          //Creating a child class  
+          class Bike2 extends Vehicle{  
+            //defining the same method as in the parent class  
+            void run(){System.out.println("Bike is running safely");}  
+            
+            public static void main(String args[]){  
+            Bike2 obj = new Bike2();//creating object  
+            obj.run();//calling method  
+            }  
+          }  
+          </pre>
+          <img class="output" src="images/exmp1-output.png" alt="">
+      </div>
+    </div>
+    <br><br>
+
+
+    <div class="card" style="width: 50rem;">
+      <div style="margin-left:-40px;" class="card-body">
+        <h5 class="card-title">Example-2</h5>
+        <h6 class="card-subtitle mb-2 text-muted">//Java Program to demonstrate the real scenario of Java Method Overriding    </h6>
+        
+        <p style="margin-left: 40px;">Consider a scenario where Bank is a class that provides functionality to get the rate of interest. However, the rate of interest varies according to banks. For example, SBI, ICICI and AXIS banks could provide 8%, 7%, and 9% rate of interest.</p>
+        <img style="width: 500px; height: 174.794px;" src="images/exmp2.png" alt="">
+
+        <pre class ="lead"><br>
+          //Three classes are overriding the method of a parent class.  
+          //Creating a parent class. 
+
+          class Bank{  
+          int getRateOfInterest(){return 0;}  
+          }  
+
+          //Creating child classes. 
+          class SBI extends Bank{
+              int getRateOfInterest(){return 8;
+              }
+              
+          class ICICI extends Bank{  
+              int getRateOfInterest(){return 7;}  
+          }  
+
+          class AXIS extends Bank{  
+              int getRateOfInterest(){return 9;}  
+              }  
+
+          //Test class to create objects and call the methods  
+          class Test2{  
+              public static void main(String args[]){  
+              SBI s=new SBI();  
+              ICICI i=new ICICI();  
+              AXIS a=new AXIS();  
+              System.out.println("SBI Rate of Interest: "+s.getRateOfInterest());  
+              System.out.println("ICICI Rate of Interest: "+i.getRateOfInterest());  
+              System.out.println("AXIS Rate of Interest: "+a.getRateOfInterest());  
+              }  
+          }
+          </pre>
+          <img class="output" src="images/exmp2-output.png" alt="">
+      </div>
+    </div>
+</div>
+</div>
+<!-------------------------------------------------------------Footer div--------------------------------------------------------------------->        
+
+  <div class="card-footer text-muted">
+          -Anushka Amar, 2029048 <br>
+          GROUP_7
+      </div>
+    </div>
+</body>
+</html>
